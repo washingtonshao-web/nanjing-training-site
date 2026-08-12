@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>南京中华门演习区 · Nanjing Mixed-Reality Training Prototype</title>
+<style>
+  :root { color-scheme: dark; }
+  * { margin: 0; box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+         background: #0b0e12; color: #dfe5ec; line-height: 1.65; }
+  header { text-align: center; padding: 3.5rem 1.5rem 2rem; }
+  h1 { font-size: 1.9rem; font-weight: 650; }
+  h1 small { display: block; font-size: 1rem; color: #8fa8c8; font-weight: 400; margin-top: 0.4rem; }
+  .hero { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .hero img { width: 100%; border-radius: 10px; border: 1px solid #1e2630; }
+  .hero figcaption, figcaption { font-size: 0.85rem; color: #8a97a5; margin-top: 0.5rem; text-align: center; }
+  main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+  h2 { font-size: 1.25rem; margin: 2.2rem 0 0.8rem; color: #cdd8e4; }
+  p { color: #aab6c2; margin-bottom: 0.9rem; }
+  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+  .gallery figure img { width: 100%; border-radius: 8px; border: 1px solid #1e2630; }
+  .status { background: #121820; border: 1px solid #223041; border-radius: 10px; padding: 1.2rem 1.4rem; margin: 2rem 0; }
+  .status strong { color: #7fb2ff; }
+  .play { display: inline-block; padding: 0.85rem 2.2rem; border-radius: 8px; background: #334155;
+          color: #cbd5e1; text-decoration: none; font-weight: 600; cursor: default; }
+  footer { text-align: center; font-size: 0.78rem; color: #5c6875; padding: 2.5rem 1rem 3rem; }
+  footer a { color: #7d8ea3; }
+  @media (max-width: 640px) { .gallery { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>南京中华门演习区<small>Nanjing Mixed-Reality Training Prototype — Unreal Engine 5.8</small></h1>
+</header>
+
+<figure class="hero">
+  <img src="img/hero-browser-stream.jpg" alt="First-person view on the asphalt road before the Ming city wall, streamed into a browser">
+  <figcaption>浏览器中的实时游戏画面:第一人称站在柏油路上,面前是明城墙的青砖墙面(Pixel Streaming 实录帧)</figcaption>
+</figure>
+
+<main>
+  <p>这是一个跨模型 AI 协作实验的产物:以南京中华门—秦淮河片区的真实测绘数据
+  (OpenStreetMap,384 栋建筑、195 条道路、明城墙环线)为底,在 Unreal Engine 5.8
+  中重建的第一人称训练演习原型。对抗目标只有训练无人机——不描绘任何针对人的暴力;
+  这座城市与它的历史被认真对待。</p>
+
+  <div class="status">
+    <strong>当前状态:</strong>游戏已可通过 Pixel Streaming 在浏览器中游玩(本地已验证:
+    行走、视角、碰撞、材质全部工作)。公网入口等待流媒体主机决策后开放——届时下方按钮将变为可点击。
+  </div>
+  <p style="text-align:center"><span class="play">进入演习(即将开放)</span></p>
+
+  <h2>从 2.5 分到重建 · The rebuild</h2>
+  <p>此前的网页版(Three.js)被独立评审团以 AAA 标准评为 2.5–3/10 后,项目按用户决定
+  迁移至 Unreal Engine 5.8。下面是同一视点的对比与当前状态。</p>
+
+  <div class="gallery">
+    <figure><img src="img/web-baseline-wall.png" alt="Old web build baseline"><figcaption>旧网页版基线(已封存)</figcaption></figure>
+    <figure><img src="img/ue-wall-and-river.png" alt="UE golden view: wall and river"><figcaption>UE 5.8:城墙与内秦淮河(同一测绘视点)</figcaption></figure>
+    <figure><img src="img/ue-gate.png" alt="UE golden view: gate north approach"><figcaption>UE 5.8:中华门北引道</figcaption></figure>
+    <figure><img src="img/ue-aerial.png" alt="Aerial of the generated district"><figcaption>生成片区俯瞰:道路网、河道、城墙皆来自测绘数据</figcaption></figure>
+  </div>
+
+  <h2>诚实的清单 · Honest ledger</h2>
+  <p>视觉质量仍是坯体阶段(评审团的整改清单尚未全部完成);无人机与五目标任务已作为数据移植、
+  尚未接入玩法;公网部署等待主机决策。每一步都有渲染帧或日志为证,全部记录在版本库中。</p>
+</main>
+
+<footer>
+  Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors — ODbL 1.0
+  · Textures: ambientCG (CC0) · Built with Unreal Engine 5.8
+</footer>
+</body>
+</html>
