@@ -35,43 +35,53 @@
 </header>
 
 <figure class="hero">
-  <img src="img/hero-browser-stream.jpg" alt="First-person view on the asphalt road before the Ming city wall, streamed into a browser">
-  <figcaption>浏览器中的实时游戏画面:第一人称站在柏油路上,面前是明城墙的青砖墙面(Pixel Streaming 实录帧)</figcaption>
+  <img src="img/ue-hero-gate.jpg" alt="从外秦淮河南岸望向中华门:法国梧桐、城墙、券门与城楼(UE 5.8 实时渲染)">
+  <figcaption>从外秦淮河南岸望向中华门:梧桐、城墙、券门与城楼(Unreal Engine 5.8 实时渲染帧,2026-09-02)</figcaption>
 </figure>
 
 <div class="hero" style="margin-top:1.2rem">
   <p style="background:#141b23;border:1px solid #1e2630;border-radius:10px;padding:1rem 1.2rem">
-  <strong>v1.0 已发布(2026-08-15)</strong> — Windows 整包下载与完整成品页:
-  <a href="https://claude-nanjing-training.falconshire.com/">claude-nanjing-training.falconshire.com</a>
-  (327 MB Shipping 构建,解压运行 <code>NanjingTraining.exe</code>;WASD 移动、鼠标视角、左键射击)</p>
+  <strong>v1.2 · 云端串流版(2026-09-02)</strong> — 无需安装,浏览器直接进入:
+  <a class="play" style="cursor:pointer;color:#fff;background:#c0563f" href="https://13-215-24-111.sslip.io/">进入演习</a>
+  <span style="display:block;color:#8a97a5;font-size:.9rem;margin-top:.5rem">服务器无人时会休眠;点击"启动服务器"后约 3–5 分钟就绪。WASD 移动、鼠标视角、左键射击。一次只能一位玩家。</span></p>
 </div>
 
 <main>
   <p>这是一个跨模型 AI 协作实验的产物:以南京中华门—秦淮河片区的真实测绘数据
   (OpenStreetMap,384 栋建筑、195 条道路、明城墙环线)为底,在 Unreal Engine 5.8
-  中重建的第一人称训练演习原型。对抗目标只有训练无人机——不描绘任何针对人的暴力;
+  中重建的第一人称训练演习原型。对抗目标是游荡的僵尸(不描绘任何针对人的暴力);
   这座城市与它的历史被认真对待。</p>
 
   <div class="status">
-    <strong>当前状态:</strong>游戏已可通过 Pixel Streaming 在浏览器中游玩(本地已验证:
-    行走、视角、碰撞、材质全部工作)。公网入口等待流媒体主机决策后开放——届时下方按钮将变为可点击。
+    <strong>当前状态:</strong>第一轮"画面优先"改造已完成并上线云端串流(NVIDIA T4 + Lumen)。独立评审(Codex)对改造前后同机位打分:
+    <strong>1.6 → 2.6 / 10</strong>(AAA 标准),判定为真实但有限的提升;它列出的五项停机问题在下方逐条公开。
   </div>
-  <p style="text-align:center"><span class="play">进入演习(即将开放)</span></p>
 
-  <h2>从 2.5 分到重建 · The rebuild</h2>
+<h2>从 2.5 分到重建 · The rebuild</h2>
   <p>此前的网页版(Three.js)被独立评审团以 AAA 标准评为 2.5–3/10 后,项目按用户决定
   迁移至 Unreal Engine 5.8。下面是同一视点的对比与当前状态。</p>
 
   <div class="gallery">
-    <figure><img src="img/web-baseline-wall.png" alt="Old web build baseline"><figcaption>旧网页版基线(已封存)</figcaption></figure>
-    <figure><img src="img/ue-wall-and-river.png" alt="UE golden view: wall and river"><figcaption>UE 5.8:城墙与内秦淮河(同一测绘视点)</figcaption></figure>
-    <figure><img src="img/ue-gate.png" alt="UE golden view: gate north approach"><figcaption>UE 5.8:中华门北引道</figcaption></figure>
-    <figure><img src="img/ue-aerial.png" alt="Aerial of the generated district"><figcaption>生成片区俯瞰:道路网、河道、城墙皆来自测绘数据</figcaption></figure>
+    <figure><img src="img/web-baseline-wall.png" alt="Old web build baseline"><figcaption>旧网页版基线(2.9 分,已封存)</figcaption></figure>
+    <figure><img src="img/ue-wall-and-river.jpg" alt="UE: wall and river"><figcaption>UE 5.8 改造后:城墙与树阵(同一测绘视点)</figcaption></figure>
+    <figure><img src="img/ue-barbican-court.jpg" alt="UE: barbican court"><figcaption>瓮城内望城台与城楼</figcaption></figure>
+    <figure><img src="img/ue-museum.jpg" alt="UE: museum forecourt"><figcaption>城墙博物馆前庭,逆光</figcaption></figure>
+    <figure><img src="img/ue-corridor.jpg" alt="UE: road corridor"><figcaption>中华路走廊与补植的梧桐</figcaption></figure>
+    <figure><img src="img/ue-aerial.jpg" alt="Aerial"><figcaption>生成片区俯瞰:道路、河道、城墙、瓮城皆来自测绘数据</figcaption></figure>
   </div>
 
-  <h2>诚实的清单 · Honest ledger</h2>
-  <p>视觉质量仍是坯体阶段(评审团的整改清单尚未全部完成);无人机与五目标任务已作为数据移植、
-  尚未接入玩法;公网部署等待主机决策。每一步都有渲染帧或日志为证,全部记录在版本库中。</p>
+  <h2>评审停机项 · What the judge said must change</h2>
+  <ol style="color:#aab6c2;padding-left:1.4em;line-height:1.7">
+    <li>地标仍是代理轮廓:城墙缺少收分、券脸、排水口等结构语言,城楼屋顶是平板加圆柱。</li>
+    <li>植被造型、色彩与布置同时失真:树干过粗,克隆感强,树冠遮挡门楼。</li>
+    <li>地表、道路与河岸没有形成可信系统:沥青补丁互相穿插,泥地无结构,河面不可见。</li>
+    <li>材质尺度与表面变化暴露平铺;施工围挡与代理方块仍在黄金机位内。</li>
+    <li>最终帧光照与清场未通过:天空高光溢出、局部黑斑、拱洞接触区发黑。</li>
+  </ol>
+
+<h2>诚实的清单 · Honest ledger</h2>
+  <p>敌人已按用户决定改为僵尸皮肤(仍不描绘任何针对人的暴力);五目标任务尚未接入玩法;
+  串流服务器为按需启动的 Spot 实例,无人观看 20 分钟自动休眠。每一步都有渲染帧或日志为证,全部记录在版本库中。</p>
 </main>
 
 <footer>
